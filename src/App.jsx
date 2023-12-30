@@ -8,8 +8,9 @@ import Footer from './components/footer/Footer';
 import { Details } from './pages/Details/Details';
 import { SearchResult } from './pages/SearchResult/SearchResult';
 import Explore from './pages/Explore/Explore';
-import i404 from './pages/404/404';
+// import i404 from './pages/404/404';
 import { BrowserRouter,Route,Routes } from 'react-router-dom';
+import PageNotFound from './pages/404/PageNotFound';
 
 function App() {
   const dispatch=useDispatch();
@@ -60,7 +61,7 @@ function App() {
     <Route path='/:mediaType/:id' element={<Details/>}/>
     <Route path='/search/:query' element={<SearchResult/>}/>
     <Route path='/explore/:mediaType' element={<Explore/>}/>
-    <Route path='*' element={<i404/>}/>
+    <Route path='*' element={PageNotFound}/>
    </Routes>
    <Footer/>
    </BrowserRouter>
