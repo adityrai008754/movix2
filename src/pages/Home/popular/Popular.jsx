@@ -2,12 +2,12 @@ import React, { useState } from 'react'
 import ContentWrapper from '../../../components/contentWrapper/ContentWrapper';
 
 import SwitchTabs from '../../../components/switchTabs/SwitchTabs';
-import useFetch from '../../../Hooks/UseFetch';
+import UseFetch from '../../../Hooks/UseFetch';
 import Carousel from '../../../components/carousel/Carousel';
 
 const Popular = () => {
     const[endpoint,setEndpoint]=useState("movie");
-    const {data,loading}=useFetch(`/${endpoint}/popular`)
+    const {data,loading}=UseFetch(`/${endpoint}/popular`)
     const onTabChange =(tab)=>{
         setEndpoint(tab==="Movies" ? "movie" : "tv");
     }

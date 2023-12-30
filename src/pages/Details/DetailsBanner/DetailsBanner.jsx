@@ -6,7 +6,7 @@ import dayjs from "dayjs";
 import "./style.scss";
 
 import ContentWrapper from "../../../components/contentWrapper/ContentWrapper";
-import useFetch from "../../../Hooks/UseFetch.jsx"
+import UseFetch from "../../../Hooks/UseFetch.jsx"
 import Genres from "../../../components/genres/Genres";
 import CircleRating from "../../../components/circleRating/CircleRating";
 import Img from "../../../components/lazyLoadImage/Img.jsx";
@@ -16,7 +16,7 @@ import VideoPopup from "../../../components/videoPopup/VideoPopUp.jsx";
 
 const DetailsBanner = ({ video, crew }) => {
     const { mediaType, id } = useParams();
-    const { data, loading } = useFetch(`/${mediaType}/${id}`);
+    const { data, loading } = UseFetch(`/${mediaType}/${id}`);
 
     const[show,setShow]=useState(false);
     const[videoId,setVideoId]=useState(null);

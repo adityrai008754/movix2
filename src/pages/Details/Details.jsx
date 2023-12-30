@@ -10,7 +10,7 @@ import Recommendation from './carousel/Recommendation'
 import UseFetch from '../../Hooks/UseFetch'
 export const Details = () => {
   const {mediaType,id}=useParams();
-  const {data,loading}=useFetch(`/${mediaType}/${id}/videos`);
+  const {data,loading}=UseFetch(`/${mediaType}/${id}/videos`);
   const { data: credits, loading: creditsLoading } = UseFetch(
     `/${mediaType}/${id}/credits`
 );

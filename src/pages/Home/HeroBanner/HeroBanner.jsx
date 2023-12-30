@@ -3,7 +3,7 @@ import { useState } from 'react'
 
 import "./style.scss"
 import { useNavigate } from 'react-router-dom';
-import useFetch from '../../../Hooks/UseFetch';
+import UseFetch from '../../../Hooks/UseFetch';
 import { useSelector } from 'react-redux';
 import Img from '../../../components/lazyLoadImage/Img';
 import ContentWrapper from '../../../components/contentWrapper/ContentWrapper';
@@ -19,7 +19,7 @@ const HeroBanner = () => {
     const {url}=useSelector((state)=> state.home);
     console.log({url});
 
-    const {data,loading}=  useFetch("/movie/upcoming");
+    const {data,loading}=  UseFetch("/movie/upcoming");
 
     useEffect(()=>{ 
         const bg = "https://image.tmdb.org/t/p/original/"+ data?.results?.[Math.floor(Math.random()*20)]?.backdrop_path;
